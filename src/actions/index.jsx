@@ -1,0 +1,4 @@
+export const GET_USER = "GET_USER";
+export const IS_LOADING = "IS_LOADING";
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_ERROR = "REGISTER_ERROR";

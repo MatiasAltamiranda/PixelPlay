@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap');
+
+*{
+    font-family: 'Oswald', sans-serif;
+    --color-primary : #533cbc;
+    --color-secondary : #ae40f1;
+}
+
+body{
+    background-image: radial-gradient(circle, #241c41, #1c1736, #15122b, #100a21, #050017);
+}

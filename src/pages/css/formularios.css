@@ -1,0 +1,135 @@
+.section_formulario{
+    position: relative;
+}
+
+.formulario {
+    background-color: #161616;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 0px 0px 20px #000000d5;
+}
+
+.formulario h2{
+    color : var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 2rem ;
+}
+
+.formulario_group{
+    margin: 1.7rem 0;
+}
+
+.formulario_group input{
+    width: 100%;
+    background-color: #161616;
+    border: none;
+    border-bottom: 1px solid #ad40f157;
+    color: #ffffffda;
+    outline: none;
+}
+
+.formulario button{
+    font-size: 1.1rem;
+    margin-top: 1.7rem ;
+    border: none;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.formulario button:hover{
+    background-color: #161616;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.img-character, .img-character-two{
+    display: none;
+}
+
+@media(min-width: 576px){
+    .formulario{
+        width: 60%;
+    }
+ 
+}
+
+@media(min-width: 768px){
+    .formulario{
+        width: 50%;
+    }
+}
+
+@media(min-width: 992px){
+    .formulario{
+        width: 50%;
+    }
+}
+
+
+@media(min-width: 1200px){
+    .formulario{
+        margin-top: 13rem;
+        width: 28%;
+    }
+    .formulario_group input{
+        width: 80%;
+    }
+    .formulario button{
+        width: 80%;
+    }
+    .img-character{
+        display: inline-block;
+        position: absolute;
+        left: 2rem;
+        top:0;
+        width: 30rem;
+    }
+    .img-character-two{
+        display: inline-block;
+        position: absolute;
+        right: 3rem;
+        top:7rem;
+        width: 26rem;
+    }
+}
+
+
+@media(min-width: 1400px){
+    .img-character{
+        left: 7rem;
+        top:0;
+    }
+    .img-character-two{
+        right: 9rem;
+        top:7rem;
+    }
+}
+
+@media(min-width: 1600px){
+    .img-character{
+        left: 11rem;
+        top:0;
+    }
+    .img-character-two{
+        right: 12rem;
+        top:7rem;
+    }
+}
+
+@media(min-width: 1800px){
+    .img-character{
+        left: 19rem;
+        top:0;
+
+    }
+    .img-character-two{
+        right: 20rem;
+        top:7rem;
+    }
+}

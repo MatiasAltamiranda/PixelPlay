@@ -1,0 +1,62 @@
+ .hero_image{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+} 
+
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10rem;
+    opacity: 70%;
+}
+
+.hero_logo{
+    width: 20rem;
+}
+
+
+@media(min-width:768px){
+    .hero_image{
+        height: 70vh;
+    } 
+
+    .logo{
+        top: 15rem;
+    }
+
+    .hero_logo{
+        width: 30rem;
+    }
+}
+
+@media(min-width:992px){
+    .hero_image{
+        height: 100vh;
+    } 
+    .logo{
+        top: 20rem;
+    }
+
+    .hero_logo{
+        width: 50rem;
+    }
+
+}
+
+@media(min-width:1400px){
+ 
+    .logo{
+        top: 22rem;
+    }
+
+    .hero_logo{
+        width: 60rem;
+    }
+
+}
+
+
+

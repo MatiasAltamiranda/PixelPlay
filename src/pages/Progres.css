@@ -1,0 +1,18 @@
+.contruccion{
+    height: 0vh;
+    margin-top: 29rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contruccion img{
+    width: 40rem;
+}
+
+
+.contruccion h2{
+    color: #ef77e7;
+    text-shadow: 0px 0px 20px black;
+}

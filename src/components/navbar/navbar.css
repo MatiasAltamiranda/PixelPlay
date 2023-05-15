@@ -1,0 +1,133 @@
+.nav{
+    display: flex;
+    justify-content: center;
+}
+
+
+.navbar{
+    background-color: #14074c;
+    position: fixed;
+    width: 90%;
+    border-radius: 4rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+
+.navbar_logo{
+    max-width: 12rem;
+    padding: 0.7rem;
+}
+
+
+
+.icon{
+    color: white;
+    padding: 0.7rem;
+    font-size: 1.6rem;
+}
+
+.icon:hover{
+    text-shadow: 0px 0px 5px white;
+}
+
+.icon-list{
+    position: absolute;
+    top: 1rem;
+    right: 4rem;
+}
+
+
+
+.menu{
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    padding-top: 5rem;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.886);
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.icon-close{
+    position: absolute;
+    top: 1rem;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item{
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 1rem;
+}
+
+.menu-item:hover{
+   text-shadow: 0px 0px 5px #ae40f1;
+   color: #ae40f1;
+}
+
+.show{
+    display: none;
+}
+
+.menu_btn{
+    font-size: 1.2rem;
+    margin: 0.5rem;
+    border: none;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    text-align: center;
+}
+
+.ingresar{
+    color: white;
+    background-color: #533cbc;
+}
+
+.registro{
+    background-color: #ae40f1;
+    color: white;
+}
+
+.registro:hover{
+    box-shadow: 0px 0px 8px #ae40f1;
+}
+
+.ingresar:hover{
+    box-shadow: 0px 0px 8px #ae40f1;
+}
+
+.menu-navbar{
+    display: none;
+}
+
+
+@media(min-width:992px){
+    .close{
+        display: none;
+    }
+
+    .menu-navbar{
+        display:block;
+    }
+
+    .show-buttons{
+        display:inline-block; 
+    }
+    
+
+    .menu-navbar ul{
+        display: flex;
+        margin: 0;
+    }
+    
+}

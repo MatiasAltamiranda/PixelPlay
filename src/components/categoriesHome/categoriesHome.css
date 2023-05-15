@@ -1,0 +1,135 @@
+.categories {
+    background-image: url("../../assets/BackCategories.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    background-attachment: fixed;
+    margin-top: 7rem!important;
+
+}
+
+.categories_tittle {
+    color: #fff;
+    text-shadow: 0px 0px 6px #000;
+    margin: 0;
+    padding: 0;
+    font-size: 3.2rem;
+}
+
+.categories_cards_mobile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+
+
+
+.categories_card_mobile {
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+    width: 80%;
+    border-radius: 5rem;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: brightness(20%);
+    transition: filter 0.5s ease-in-out;
+}
+
+
+.categories_card_mobile:hover {
+    filter: brightness(80%);
+    box-shadow: 0px 5px 20px #ae40f1;
+}
+
+
+.categories_card_mobile_img {
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+
+}
+
+
+.categories_card_mobile_text {
+    color: #fff;
+    text-shadow: 0px 0px 6px #000;
+    font-size: 3rem;
+    position: absolute;
+    opacity: 100%;
+    transition: text-shadow 0.4s;
+}
+
+.categories_card_mobile_text:hover {
+
+    text-shadow: 0px 5px 20px #ae40f1;
+}
+
+
+.categories_card_pj{
+display: none;
+}
+
+@media (min-width:768px) {
+    .categories{
+        padding: 5rem;
+        position: relative;
+    }
+
+    .categories_card_mobile {
+        width: 95%;
+
+    }
+
+    .categories_card_pj{
+        display: inline-block;
+        position: absolute;
+        height: 30rem;
+        top: 38rem;
+        right: 4rem;
+    }
+}
+
+@media (min-width:992px){
+    .categories_card_pj{
+        top: 22rem;
+        right: 2rem;
+    }
+}
+
+
+@media (min-width:1200px) {
+    .categories{
+        padding: 5rem 5rem 9rem 5rem;
+    }
+    .categories_tittle{
+        margin-bottom: 5rem!important ;
+        font-size: 4rem;
+    }
+    .categories_card_mobile_img {
+        height: 20rem;
+    }
+
+    .categories_card_pj{
+        height: 40rem;
+        top: 35rem;
+        right: 0;
+    }
+}
+
+@media (min-width:1400px) {
+
+    .categories_card_pj{
+        height: 50rem;
+        top: 32rem;
+        right: 2rem;
+    }
+}
