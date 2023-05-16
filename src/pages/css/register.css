@@ -1,0 +1,148 @@
+.contenedor{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(84, 60, 190, 0.6)), url("../../assets/fondoMario.webp");
+    width: 100%;
+    height: 45rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 6rem;
+}
+
+.contenedor_logo{
+    display: none;
+}
+
+
+.formulario {
+    background-color: #161616ee;
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem;
+    box-shadow: 0px 0px 50px var(--color-primary);
+}
+
+.formulario h2{
+    color : var(--color-primary);
+    font-weight: 600;
+}
+
+.formulario p{
+    color : var(--color-secondary);
+    font-weight: 600;
+    margin-bottom: 2rem ;
+}
+
+.formulario_group{
+    margin: 1.7rem 0;
+}
+
+.formulario_group input{
+    width: 100%;
+    background-color: #16161600;
+    border: none;
+    border-bottom: 1px solid #ad40f137;
+    color: #ffffffda;
+    outline: none;
+}
+
+.formulario button{
+    font-size: 1.1rem;
+    margin-top: 1.7rem ;
+    border: none;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.formulario button:hover{
+    background-color: #16161600;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+@media(min-width: 576px){
+    .formulario{
+        margin: 4rem auto;
+        width: 30rem;
+    }
+}
+
+@media(min-width: 768px){
+
+    .contenedor{
+        height: 50rem;
+        padding-top: 8rem;
+    }
+    
+}
+
+@media(min-width: 992px){
+    .contenedor_logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center ;
+        justify-content: center;
+    }
+    .logoPixel{
+        width: 25rem;
+    }
+    .contenedor_logo_text{
+        font-size: 1rem;
+        font-weight: 300;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        background-color: var(--color-primary);
+        border: 5px solid var(--color-secondary);
+        box-shadow: 0px 0px 5px var(--color-secondary);
+    }
+}
+
+
+@media(min-width: 1200px){
+    .formulario{
+        margin: auto;
+        width: auto;
+    }
+    .formulario_group input{
+        width: 80%;
+    }
+    .formulario button{
+        width: 80%;
+    }
+    .contenedor{
+        height: 60rem;
+        padding-top: 15rem;
+    }
+
+    .logoPixel{
+        width: 35rem;
+    }
+    .contenedor_logo_text{
+        font-size: 1.3rem;
+    }
+}
+
+
+@media(min-width: 1400px){
+
+    .contenedor_logo_text{
+        font-size: 1.7rem;
+    }
+
+    .logoPixel{
+        width: 43rem;
+    }
+    .formulario{
+        width: 30rem;
+    }
+    .contenedor{
+        height: 100vh;
+        padding-top: 16rem;
+    }
+}
+
