@@ -1,0 +1,23 @@
+.contenedor-login{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(84, 60, 190, 0.6)), url("../../assets/loginFondo.webp");
+}
+
+@media(min-width: 1200px){
+    .formulario{
+        margin: auto;
+        width: 30rem;
+    }
+
+}
+
+.fortgotText{
+    color : #fff;
+    text-decoration : none;
+    text-shadow: 0px 0px 5px white;
+}
+
+.fortgotText:hover{
+    color : #fff;
+    text-decoration : none;
+    text-shadow: 0px 0px 5px var(--color-primary);
+}
