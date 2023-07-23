@@ -1,3 +1,4 @@
+import Swal from "sweetalert2"
 import { useReducer } from "react";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
@@ -11,7 +12,8 @@ import {GET_USER,
     LOGOUT,
     LOGIN_SUCCESS,
     FORGOT_PASS_SUCCESS,
-    RESET_PASSWORD_SUCCESS
+    RESET_PASSWORD_SUCCESS,
+    UPDATE_SUCCESS
     } from "../actions"
 
 
@@ -32,8 +34,9 @@ const AuthState = (prop) =>{
         try {
             const response = await clientAxios.post('/api/v1/auth/signup', data);
             dispatch({type : REGISTER_SUCCESS , payload : response.data});
+            return response.data;
         } catch (error) {
-            console.log(error)
+           return error
         }
     }
 
@@ -54,6 +57,7 @@ const AuthState = (prop) =>{
         localStorage.removeItem("token")
         localStorage.removeItem("userData")
         dispatch({type:LOGOUT});
+        window.location.reload();   
     }
 
     const login =async (data)=>{
@@ -63,7 +67,11 @@ const AuthState = (prop) =>{
             localStorage.setItem("token", response.data.token);
             localStorage.setItem("userData", JSON.stringify(response.data.data.user));
         } catch (error) {
-            console.log(error)
+            Swal.fire({
+                icon: 'error',
+                title: error.response.data,
+                text: "Revise sus datos"
+            })
         }
     }
 
@@ -85,12 +93,23 @@ const AuthState = (prop) =>{
         }
     }
 
+    const updateUser = async (data) =>{
+        try {
+            const response = await clientAxios.put('/api/v1/users', data)
+            dispatch({ type : UPDATE_SUCCESS, payload: response.data.data})
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return(
-        <AuthContext.Provider value = {{...state,registerUser, getUser, logout, login,forgotPass,resetPass}}>
+        <AuthContext.Provider value = {{...state,registerUser, getUser, logout, login,forgotPass,resetPass, updateUser}}>
             {children}
         </AuthContext.Provider>
     )
 }
 
+
+ 
 
 export default AuthState;

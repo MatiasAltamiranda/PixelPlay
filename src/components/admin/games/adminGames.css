@@ -1,0 +1,53 @@
+.section_admin_games{
+    margin: 0 auto 5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section_admin_games_tittle{
+    color: white;
+}
+
+label{
+    color:white;
+}
+
+
+.formulario_admin{
+    background-color: #000000d6;
+    padding: 2rem;
+    text-align: center;
+    width: 90%;
+}
+
+.formulario_admin label{
+    display: block;
+}
+
+.formulario_admin_input{
+    background-color: transparent;
+    color : #fff;
+    border: none;
+    border-bottom: 1px solid #ffffff41;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.formulario_admin_submit{
+    margin-top: 2rem;
+}
+
+
+.table-games{
+    overflow: auto;
+}
+
+
+.table-games-icon{
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+

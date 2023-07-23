@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 import "./categoriesHome.css";
 import gtaPortada from "../../assets/CatMobile/gtavCategories.jpg";
 import ffPortada from "../../assets/CatMobile/ffCategories.jpg";
 import fifaPortada from "../../assets/CatMobile/FifaCategories.jpeg";
 import AgePortada from "../../assets/CatMobile/AgeCategories.jpg";
 import zeldaPortada from "../../assets/CatMobile/zeldaCategories.jpg";
-import categoriesCharacter  from "../../assets/CatMobile/categoriesCharacter.png";
+import categoriesCharacter from "../../assets/CatMobile/categoriesCharacter.png";
 
 function CategoriesHome() {
   return (
@@ -20,16 +22,20 @@ function CategoriesHome() {
                 className="categories_card_mobile_img"
                 src={gtaPortada}
               ></img>
-              <h2 className="categories_card_mobile_text">Acción</h2>
+              <Link
+                className="categories_card_mobile_text"
+                to="/category/accion"
+              >
+                Acción
+              </Link>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-4 categories_cards_mobile ">
             <div className="text-center categories_card_mobile">
-              <img
-                className="categories_card_mobile_img"
-                src={ffPortada}
-              ></img>
-              <h2 className="categories_card_mobile_text">RPG</h2>
+              <img className="categories_card_mobile_img" src={ffPortada}></img>
+              <Link className="categories_card_mobile_text" to="/category/RPG">
+                RPG
+              </Link>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-4 categories_cards_mobile ">
@@ -38,7 +44,12 @@ function CategoriesHome() {
                 className="categories_card_mobile_img"
                 src={fifaPortada}
               ></img>
-              <h2 className="categories_card_mobile_text">Deportes</h2>
+              <Link
+                className="categories_card_mobile_text"
+                to="/category/deporte"
+              >
+                Deportes
+              </Link>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-4 categories_cards_mobile ">
@@ -47,7 +58,12 @@ function CategoriesHome() {
                 className="categories_card_mobile_img"
                 src={AgePortada}
               ></img>
-              <h2 className="categories_card_mobile_text">Estrategia</h2>
+              <Link
+                className="categories_card_mobile_text"
+                to="/category/estrategia"
+              >
+                Estrategia
+              </Link>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-4 categories_cards_mobile ">
@@ -56,14 +72,16 @@ function CategoriesHome() {
                 className="categories_card_mobile_img"
                 src={zeldaPortada}
               ></img>
-              <h2 className="categories_card_mobile_text">Aventuras</h2>
+              <Link
+                className="categories_card_mobile_text"
+                to="/category/aventura"
+              >
+                Aventuras
+              </Link>
             </div>
           </div>
         </div>
-              <img
-                className="categories_card_pj"
-                src={categoriesCharacter}
-              ></img>
+        <img className="categories_card_pj" src={categoriesCharacter}></img>
       </section>
     </>
   );

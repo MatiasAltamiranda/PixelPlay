@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
 import AuthState from "./context/authState";
+import GameState from "./context/games/gamesState";
 
 //Routes
 import Progress from "./pages/Progres";
@@ -13,30 +16,50 @@ import PrivateRoute from "./routes/privateRoute";
 import Login from "./pages/login";
 import ForgotPassword from "./pages/forgotPassword";
 import ResetPassword from "./pages/resetPassword";
+import Admin from "./pages/admin";
+import Profile from "./pages/profile";
+import AdminRoute from "./routes/adminRoute";
+import Category_template from "./pages/template_category";
+import TemplateGame from "./pages/templateGame";
 
 function App() {
   return (
     <>
       <AuthState>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Progress />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/prueba" element={<Prueba />} />
-            <Route
-              path="/private"
-              element={
-                <PrivateRoute>
-                  <Private/>
-                </PrivateRoute>
-              }
-            />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/forgotpassword" element={<ForgotPassword/>}/>
-            <Route path="/resetpassword/:token" element={<ResetPassword/>}/>
-          </Routes>
-        </Layout>
+        <GameState>
+              <Layout>
+                <Routes>
+                  <Route path="/" element={<Progress />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/prueba" element={<Prueba />} />
+                  <Route
+                    path="/private"
+                    element={
+                      <PrivateRoute>
+                        <Private/>
+                      </PrivateRoute>
+                    }
+                  />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/forgotpassword" element={<ForgotPassword/>}/>
+                  <Route path="/resetpassword/:token" element={<ResetPassword/>}/>
+                  <Route path="/panel-admin" element={
+                  <AdminRoute>
+                  <Admin/>
+                  </AdminRoute>
+                  }/>
+                  <Route path="/profile" element={
+                  <PrivateRoute>   
+                  <Profile/>
+                  </PrivateRoute>
+                }/>
+                <Route path="/category/:category" element ={<Category_template/>}/>
+                <Route path="/:slug" element={<TemplateGame/>}/>
+                </Routes>
+              
+              </Layout>
+        </GameState>
       </AuthState>
     </>
   );

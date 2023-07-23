@@ -10,8 +10,14 @@ const Registro = () => {
 
  /*  const navigate = useNavigate(); */
 
+ const logged = JSON.parse(localStorage.getItem("userData"))
   
-const {registerUser , isAuth} = useContext(AuthContext)
+
+ if(logged){
+  window.location.href = "/home"}
+
+
+const {registerUser} = useContext(AuthContext)
 
 const [formRegister,setFormRegister] = useState({
     name : "",
@@ -38,28 +44,48 @@ const handleOnChange = e =>{
   setFormRegister({...formRegister, [e.target.name] : e.target.value})
 };
 
-const handleOnSubmit = e =>{
+
+const handleOnSubmit = async (e) => {
   e.preventDefault();
-  if(password === confirmPassword){
-    registerUser(formRegister)
-    Swal.fire({
-      icon: 'success',
-      title: 'Cuenta creada con exito',
-      showConfirmButton: false,
-      timer: 1500
-  })
-  limpiarForm();
-  }
-  else{
+  if (password === confirmPassword) {
+    try {
+      const response = await registerUser(formRegister);
+      if (response.ok) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Cuenta creada con éxito',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        limpiarForm();
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'El correo ya existe',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al registrar el usuario contacte al administrador',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      console.log(error);
+    }
+  } else {
     Swal.fire({
       icon: 'error',
       title: 'Las contraseñas no coinciden',
       showConfirmButton: false,
       timer: 1500
-  }) }
+    });
+  }
+};
 
 
-}
 
 
 /* useEffect(()=>{
@@ -71,7 +97,7 @@ const handleOnSubmit = e =>{
 
   return (
     <>
-      <div className="container-fluid contenedor">
+    {(logged)? "cargando..." : (<div className="container-fluid contenedor">
         <div className="row">
           <div className="col-12 col-lg-6  col-xl-7 col-xxl-7 contenedor_logo">
             <img className="logoPixel" src={logo} 
@@ -148,7 +174,8 @@ const handleOnSubmit = e =>{
             </div>
           </div>
         </div>
-      </div>
+      </div>)}
+      
     </>
   );
 };

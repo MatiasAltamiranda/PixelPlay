@@ -1,0 +1,86 @@
+.one_game{
+    background-color: #0000009b;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin: 8rem auto 2rem auto;
+    border: 1px solid var(--color-secondary);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0px 0px 12px var(--color-secondary);
+}
+
+.game_img{
+    display: flex;
+    justify-content: center;
+}
+
+.game_info_img{
+    width: 9rem;
+}
+
+.game_info_title{
+    color : #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.game_info_plus p{
+    color:#c2c1c1
+}
+
+.game_info_plus p span{
+    color:var(--color-secondary)
+}
+
+.game_info_images_item{
+width: 20rem;
+}
+
+.purchase{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchase_price{
+    color: var(--color-secondary);
+    padding-top: 1rem;
+    font-size: 1.2rem;
+}
+
+@media(min-width:992px){
+
+    .one_game{
+       padding: 2rem;
+    }
+
+    .game_info{
+       display: flex;
+       align-items: center;
+       flex-direction: row-reverse;
+    }
+
+    .game_info_description{
+        padding-left: 2rem;
+        border-left: 1px solid #6e6e6e;
+    }
+
+    .purchase{
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    .game_info_title{
+        text-align: start;
+    }
+
+    .purchase_price{
+        font-size: 2rem;
+    }
+
+    .game_img{
+        justify-content: start;
+    }
+}

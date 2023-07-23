@@ -1,17 +1,35 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets/pixelPortada.png";
 import "./navbar.css";
+import Logout from "../logout/logout";
+
+
 
 function NavBar() {
+ 
   const [btn, setBtn] = useState(false);
+  const logged = JSON.parse(localStorage.getItem("userData"))
 
+
+    const [isOpen, setIsOpen] = useState(false)
+  
+    const toggleDropdown = () => {
+      setIsOpen(!isOpen);
+    }
+
+
+  
   return (
     <>
+  <div>
+    
+    </div>
       <div className="nav">
         <div className="navbar">
+          <Link to="/home">
           <img className="navbar_logo" src={logo} alt="Logo pixelplay" />
-
+          </Link>
           <div className="icons">
             <i
               className={
@@ -45,9 +63,21 @@ function NavBar() {
                 <li className="menu-item">Contacto</li>
               </ul>
             </div>
-          </div>
-
-          <div className="buttons">
+          </div> 
+          
+          {(logged)?(<div className="buttons_user
+          ">
+            <div onClick={toggleDropdown} className="info-user">
+             <img className="buttons_profile_photo" src={`${import.meta.env.VITE_APP_USER_IMAGES}/${logged.profilePhoto}`} alt={logged.name}></img>
+            <p className="buttons_profile_text">{logged.name}</p>
+            </div> 
+            {isOpen && (
+            <div className="DropDown_User">
+              {(logged.role === "admin")? (<Link className="user_rutas" to="/panel-admin">Panel admin</Link>):("")}
+            <Link className="user_rutas" to="/profile">Mi perfil</Link>
+            <Logout className="show show-buttons"/>
+            </div>  )}
+            </div>) : ( <div className="buttons">
           <NavLink to="/login">
             <button className="menu_btn ingresar show show-buttons">
               Ingresar
@@ -58,7 +88,9 @@ function NavBar() {
                 Registrarse
               </button>
             </NavLink>
-          </div>
+          </div>)}
+         
+          
         </div>
 
         <div className={btn ? "menu close" : "show "}>
@@ -85,14 +117,26 @@ function NavBar() {
             <li className="menu-item">Categorias</li>
             <li className="menu-item">Contacto</li>
           </ul>
-          <div className="buttons">
+          {logged ? (<div className="buttons_user_mobile
+          ">
+            <div className="info-user-mobile">
+             <img className="buttons_profile_photo" src={`${import.meta.env.VITE_APP_USER_IMAGES}/${logged.profilePhoto}`} alt={logged.name}></img>
+            <p className="buttons_profile_text">{logged.name}</p>
+            </div> 
+            <div className="DropDown_User_mobile">
+            {(logged.role === "admin")? (<Link className="user_rutas" to="/panel-admin">Panel admin</Link>):("")}  
+            <Link className="user_rutas" to="/profile">Mi perfil</Link>
+            <Logout className="show show-buttons"/>
+            </div> 
+            </div>):( <div className="buttons">
           <NavLink to="/login">
             <button className="menu_btn ingresar">Ingresar</button>
             </NavLink>
             <NavLink to="/register">
             <button className="menu_btn registro">Registrarse</button>
             </NavLink>
-          </div>
+          </div>)}
+         
         </div>
       </div>
     </>

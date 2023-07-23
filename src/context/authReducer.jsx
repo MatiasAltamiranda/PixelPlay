@@ -5,12 +5,14 @@ REGISTER_ERROR,
 LOGOUT,
 LOGIN_SUCCESS,
 FORGOT_PASS_SUCCESS,
-RESET_PASSWORD_SUCCESS
+RESET_PASSWORD_SUCCESS,
+UPDATE_SUCCESS
 } from "../actions"
 
 
 const authReducer = (state,action) =>{
     switch(action.type){
+        case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
             return {
                 ...state,
@@ -35,6 +37,11 @@ const authReducer = (state,action) =>{
                 return {
                     ...state
                 }
+            case UPDATE_SUCCESS:return{
+                ...state,
+                user : action.payload.user,
+                loading : false
+            }    
             case LOGOUT : 
             return{
                 ...state,

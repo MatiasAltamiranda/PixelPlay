@@ -9,7 +9,7 @@ import "./css/login.css";
 const Login = () => {
 
   const navigate = useNavigate();
-
+  const logged = JSON.parse(localStorage.getItem("userData"))
   
 const {login , isAuth} = useContext(AuthContext)
 
@@ -32,15 +32,17 @@ const handleOnSubmit = e =>{
 
 
 useEffect(()=>{
-  if(isAuth){
-      navigate("/private")
+  if(logged && logged.role==="user"){
+     window.location.href="/home"
+  }else if (logged && logged.role==="admin"){
+    window.location.href="/panel-admin"
   }
-}, [isAuth])
+}, [logged])
 
 
   return (
     <>
-      <div className="container-fluid contenedor contenedor-login">
+    {(logged)? "Redirigienado espere" : ( <div className="container-fluid contenedor contenedor-login">
         <div className="row">
           <div className="col-12  section_formulario">
             <div className="section_formulario">
@@ -80,7 +82,8 @@ useEffect(()=>{
             </div>
           </div>
         </div>
-      </div>
+      </div>)}
+     
     </>
   );
 };

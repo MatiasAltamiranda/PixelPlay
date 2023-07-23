@@ -66,10 +66,12 @@
     position: absolute;
     opacity: 100%;
     transition: text-shadow 0.4s;
+    text-decoration: none;
 }
 
 .categories_card_mobile_text:hover {
 
+    color : #fff;
     text-shadow: 0px 5px 20px #ae40f1;
 }
 
