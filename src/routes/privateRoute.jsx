@@ -18,7 +18,7 @@ const PrivateRoute = (prop)=>{
 
     useEffect(()=>{
         if(!logged){
-            navigate('/home')
+            navigate('/')
         }
     },[isAuth, navigate])
 

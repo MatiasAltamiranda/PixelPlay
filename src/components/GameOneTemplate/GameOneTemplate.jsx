@@ -1,9 +1,42 @@
 import "./GameOneTemplate.css";
 import SliderGame from "../sliderGame/sliderGame";
+import { useContext } from "react";
+import GamesContext from "../../context/games/gamesContext";
+import Swal from "sweetalert2"
 
 const GameOneTemplate = (prop) => {
-  const { tittle, developer, franchise, description, coverImage, images, price } =
+  const { tittle, developer, franchise, description, coverImage, images, price,id } =
     prop;
+
+  const {addGameCart} = useContext(GamesContext)
+
+
+
+
+  
+  const addCart = async (id) => {
+    try {
+      const response = await addGameCart(id);
+      if(response.status === 200){
+        Swal.fire({
+          icon: 'success',
+          title: 'Juego añadido al carrito',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }else{
+        Swal.fire({
+          icon: 'warning',
+          title: "El juego ya se encuentra en el carrito",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+        
+    } catch (error) {
+      return error; 
+    }
+  };
 
   return (
     <>
@@ -35,7 +68,7 @@ const GameOneTemplate = (prop) => {
         <div className="purchase_price">
                 <p>${price}</p>
             </div>
-            <button className="menu_btn ingresar">Agregar al carrito</button>
+            <button onClick={()=>addCart(id)} className="menu_btn ingresar">Agregar al carrito</button>
            
       </div>
       </div>

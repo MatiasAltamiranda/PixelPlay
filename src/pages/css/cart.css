@@ -1,0 +1,127 @@
+.cart-section {
+    margin-top: 8rem;
+}
+
+.cart-section h2 {
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.cards-cart{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+    margin: 1rem;
+    background-color: rgba(0, 0, 0, 0.56);
+    box-shadow: 0px 0px 12px black;
+}
+
+.card-cart {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+}
+
+.card-cart img {
+    width: 7rem;
+}
+
+.card-info {
+    width: 15rem;
+    padding-left: 1rem;
+}
+
+.card-info p {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.card-info p span {
+    font-size: 1rem;
+
+}
+
+.section-purchase {
+    margin-top: 2rem;
+    box-shadow: 0px 0px 5px var(--color-secondary);
+    padding: 1rem;
+    color: #fff;
+    background-color: #0a0a0a;
+    font-weight: 200;
+}
+
+.section-purchase p {
+    display: inline-block;
+}
+
+.info-purchase {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+
+.info-purchase p span {
+    font-size: 1.2rem;
+}
+
+.go-purchase {
+    width: 100%;
+    margin: 0;
+}
+
+
+@media(min-width : 576px) {
+    .card-info {
+        width: 20rem;
+    }
+}
+
+@media(min-width : 768px) {
+    .card-info {
+        width: 20rem;
+    }
+
+    .go-purchase {
+        width: 8rem;
+        margin: 0;
+    }
+
+    .info-purchase {
+        display: flex;
+        justify-content: center;
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    }
+    .section-purchase {
+       text-align: center;
+    }
+    .cart-section{
+        width: 40rem;
+    }
+}
+
+@media(min-width : 992px) {
+    .section-purchase {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0rem;
+        box-shadow: 0px 0px 5px var(--color-secondary);
+        padding: 1rem;
+        color: #fff;
+        background-color: #0a0a0a;
+        font-weight: 200;
+    }
+    .cart-section{
+        width: 65rem;
+    }
+}
+
+

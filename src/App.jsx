@@ -6,7 +6,6 @@ import AuthState from "./context/authState";
 import GameState from "./context/games/gamesState";
 
 //Routes
-import Progress from "./pages/Progres";
 import Home from "./pages/home";
 import Layout from "./components/layout/layout";
 import Prueba from "./pages/prueba";
@@ -21,6 +20,7 @@ import Profile from "./pages/profile";
 import AdminRoute from "./routes/adminRoute";
 import Category_template from "./pages/template_category";
 import TemplateGame from "./pages/templateGame";
+import Cart from "./pages/cart";
 
 function App() {
   return (
@@ -29,8 +29,7 @@ function App() {
         <GameState>
               <Layout>
                 <Routes>
-                  <Route path="/" element={<Progress />} />
-                  <Route path="/home" element={<Home />} />
+                  <Route path="/" element={<Home />} />
                   <Route path="/prueba" element={<Prueba />} />
                   <Route
                     path="/private"
@@ -52,6 +51,11 @@ function App() {
                   <Route path="/profile" element={
                   <PrivateRoute>   
                   <Profile/>
+                  </PrivateRoute>
+                }/>
+                  <Route path="/cart" element={
+                  <PrivateRoute>   
+                  <Cart/>
                   </PrivateRoute>
                 }/>
                 <Route path="/category/:category" element ={<Category_template/>}/>

@@ -309,7 +309,7 @@ const AdminGames = () => {
           </thead>
           <tbody>
             {loading ? (
-              games?.map((game) => (
+              games.map((game) => (
                 <tr key={game._id}>
                   <td>{game.tittle}</td>
                   <td>

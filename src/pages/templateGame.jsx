@@ -31,7 +31,7 @@ const TemplateGame = ()=>{
               <p>Cargando juego...</p>
             ) : (
             <section className="container one_game">   
-              <GameOneTemplate tittle={games.tittle} developer={games.developer} franchise={games.franchise} description={games.description} coverImage={games.coverImage} images={games.images} price={games.price}/>
+              <GameOneTemplate tittle={games.tittle} developer={games.developer} franchise={games.franchise} description={games.description} coverImage={games.coverImage} images={games.images} price={games.price} id={games._id}/>
              <GameReviews reviews={games.reviews} id={games._id}/>
             </section>
             )}

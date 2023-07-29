@@ -17,7 +17,7 @@ const AdminRoute = (prop) =>{
 
     useEffect(()=>{
       if(!logged || logged.role !== "admin"){
-          navigate('/home')
+          navigate('/')
       }
   },[isAuth, navigate])
 

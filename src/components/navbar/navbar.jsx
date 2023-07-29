@@ -27,7 +27,7 @@ function NavBar() {
     </div>
       <div className="nav">
         <div className="navbar">
-          <Link to="/home">
+          <Link to="/">
           <img className="navbar_logo" src={logo} alt="Logo pixelplay" />
           </Link>
           <div className="icons">
@@ -54,7 +54,7 @@ function NavBar() {
                   className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : "navegation"
                   }
-                  to="/home"
+                  to="/"
                 >
                   <li className="menu-item">Inicio</li>
                 </NavLink>
@@ -73,8 +73,9 @@ function NavBar() {
             </div> 
             {isOpen && (
             <div className="DropDown_User">
-              {(logged.role === "admin")? (<Link className="user_rutas" to="/panel-admin">Panel admin</Link>):("")}
-            <Link className="user_rutas" to="/profile">Mi perfil</Link>
+              {(logged.role === "admin")? (<Link className="user_rutas" to="/panel-admin"><i className="bi bi-shield-lock user_rutas me-1"></i>Panel admin</Link>):("")}
+            <Link className="user_rutas" to="/cart"><i className="bi bi-cart3 user_rutas me-1"></i>Carrito</Link>
+            <Link className="user_rutas" to="/profile"><i className="bi bi-person user_rutas me-1"></i> Perfil</Link>
             <Logout className="show show-buttons"/>
             </div>  )}
             </div>) : ( <div className="buttons">
@@ -109,7 +110,7 @@ function NavBar() {
                   className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : "navegation"
                   }
-                  to="/home"
+                  to="/"
                 >
             <li className="menu-item">Inicio</li>
             </NavLink>
@@ -124,8 +125,9 @@ function NavBar() {
             <p className="buttons_profile_text">{logged.name}</p>
             </div> 
             <div className="DropDown_User_mobile">
-            {(logged.role === "admin")? (<Link className="user_rutas" to="/panel-admin">Panel admin</Link>):("")}  
-            <Link className="user_rutas" to="/profile">Mi perfil</Link>
+            {(logged.role === "admin")? (<Link className="user_rutas" to="/panel-admin"><i className="bi bi-shield-lock user_rutas me-1"></i> Panel admin</Link>):("")}  
+            <Link className="user_rutas" to="/cart"><i className="bi bi-cart3 user_rutas me-1"></i>Carrito</Link>
+            <Link className="user_rutas" to="/profile"><i className="bi bi-person user_rutas me-1"/> Perfil</Link>
             <Logout className="show show-buttons"/>
             </div> 
             </div>):( <div className="buttons">
