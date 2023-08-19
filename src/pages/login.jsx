@@ -33,7 +33,7 @@ const handleOnSubmit = e =>{
 
 useEffect(()=>{
   if(logged && logged.role==="user"){
-     window.location.href="/home"
+     window.location.href="/"
   }else if (logged && logged.role==="admin"){
     window.location.href="/panel-admin"
   }

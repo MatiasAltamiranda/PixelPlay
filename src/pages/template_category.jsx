@@ -21,7 +21,7 @@ const Category_template = () => {
 
   return (
     <>
-      <div className="container games_category mb-5">
+      <div className="container games_category ">
         <div className="row">
             {!loading ? (
               <p>Cargando juegos...</p>

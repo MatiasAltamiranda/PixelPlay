@@ -35,6 +35,10 @@ label{
     margin: 1rem 0;
 }
 
+.formulario_admin_input option{
+    color: #000;
+}
+
 .formulario_admin_submit{
     margin-top: 2rem;
 }

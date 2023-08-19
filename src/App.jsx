@@ -8,7 +8,6 @@ import GameState from "./context/games/gamesState";
 //Routes
 import Home from "./pages/home";
 import Layout from "./components/layout/layout";
-import Prueba from "./pages/prueba";
 import Private from "./pages/private";
 import Register from "./pages/register";
 import PrivateRoute from "./routes/privateRoute";
@@ -21,6 +20,8 @@ import AdminRoute from "./routes/adminRoute";
 import Category_template from "./pages/template_category";
 import TemplateGame from "./pages/templateGame";
 import Cart from "./pages/cart";
+import Checkout from "./pages/checkout";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -30,7 +31,6 @@ function App() {
               <Layout>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/prueba" element={<Prueba />} />
                   <Route
                     path="/private"
                     element={
@@ -58,8 +58,14 @@ function App() {
                   <Cart/>
                   </PrivateRoute>
                 }/>
+                   <Route path="/checkout" element={
+                  <PrivateRoute>   
+                  <Checkout/>
+                  </PrivateRoute>
+                }/>
                 <Route path="/category/:category" element ={<Category_template/>}/>
-                <Route path="/:slug" element={<TemplateGame/>}/>
+                <Route path="/game/:slug" element={<TemplateGame/>}/>
+                 <Route path="*" element={<NotFound />} />
                 </Routes>
               
               </Layout>

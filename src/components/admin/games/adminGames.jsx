@@ -196,17 +196,23 @@ const AdminGames = () => {
           </div>
           <div>
             <label>Categoria</label>
-            <input
+  
+            <select
               className="formulario_admin_input"
-              type="text"
               name="category"
               value={category}
               onChange={handleChange}
-              placeholder="Ingrese categoria del juego"
               required
-              minLength="2"
-              maxLength="50"
-            />
+            >
+              <option value="" disabled>
+                Selecciona una categoria
+              </option>
+              <option value="accion">accion</option>
+              <option value="RPG">RPG</option>
+              <option value="deporte">deporte</option>
+              <option value="estrategia">estrategia</option>
+              <option value="aventura">aventura</option>
+            </select>
           </div>
           <div>
             <label>Franquicia</label>
@@ -217,9 +223,19 @@ const AdminGames = () => {
               onChange={handleChange}
               required
             >
-              <option value="" disabled >Selecciona una franquicia</option>
-              <option value="accion">M</option>
-              <option value="aventura">deportes</option>
+              <option value="" disabled>
+                Selecciona una franquicia
+              </option>
+              <option value="Marvel">Marvel</option>
+              <option value="Nintendo">Nintendo</option>
+              <option value="Fifa">Fifa</option>
+              <option value="Lego">Lego</option>
+              <option value="Capcom">Capcom</option>
+              <option value="MasiGames">MasiGames</option>
+              <option value="Rockstar Games">Rockstar Games</option>
+              <option value="2k">2k</option>
+              <option value="Valve">Valve</option>
+              <option value="Bandai Namco">Bandai Namco</option>
             </select>
           </div>
           <div>
@@ -236,13 +252,30 @@ const AdminGames = () => {
           </div>
           <div>
             <label>Desarrollador</label>
-            <input
+       
+
+            <select
               className="formulario_admin_input"
-              type="text"
               name="developer"
               value={developer}
               onChange={handleChange}
-            />
+              required
+            >
+              <option value="" disabled>
+                Selecciona un desarrollador
+              </option>
+              <option value="Rockstar North">Rockstar North</option>
+              <option value="Electronic Arts">Electronic Arts</option>
+              <option value="Microsoft Studios">Microsoft Studios</option>
+              <option value="EA Sports">EA Sports</option>
+              <option value="Ghost Games">Ghost Games</option>
+              <option value="Ubisoft Montreal">Ubisoft Montreal</option>
+              <option value="Insomniac Games">Insomniac Games</option>
+              <option value="Valve">Valve</option>
+            </select>
+
+
+
           </div>
           <div>
             <label>Imagen de portada</label>
@@ -309,7 +342,7 @@ const AdminGames = () => {
           </thead>
           <tbody>
             {loading ? (
-              games.map((game) => (
+              games?.map((game) => (
                 <tr key={game._id}>
                   <td>{game.tittle}</td>
                   <td>

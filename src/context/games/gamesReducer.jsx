@@ -51,6 +51,13 @@ const GameReducer = (state, action) => {
         : [action.payload],
         loading: true
       };
+    case "GET_CART":return{
+        ...state,
+        userCart: Array.isArray(action.payload)
+        ? action.payload
+        : [action.payload],
+        loading: true,
+      };
       case DELETE_GAME:
       return {
         ...state,

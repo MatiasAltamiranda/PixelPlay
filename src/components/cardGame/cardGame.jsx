@@ -22,7 +22,7 @@ const CardGame = (prop) => {
               <p className="cardgame_price">
                 $<span className="cardgame_price_total">{price}</span>
               </p>
-              <Link to={`/${slug}`}>
+              <Link to={`/game/${slug}`}>
               <button className="menu_btn registro btn_game">Ver detalles</button></Link>
             </footer>
         </div>

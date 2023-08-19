@@ -22,6 +22,7 @@ const GameState = (prop) => {
     currentGame: null,
     error: null,
     loading: false,
+    userCart : []
   };
 
   const [state, dispatch] = useReducer(GameReducer, initialState);
@@ -100,6 +101,7 @@ const GameState = (prop) => {
       const response = await clientAxios.post(`/api/v1/carrito/agregar/${id}`);
       return response;
     } catch (error) {
+      console.log(error)
       return(error.response.data.error);
     }
   };
@@ -107,7 +109,8 @@ const GameState = (prop) => {
   const getCartUser =  async () => {
     try {
       const response = await clientAxios.get(`/api/v1/carrito/getCarUser`);
-      return response;
+      dispatch({ type: "GET_CART", payload: response.data.carrito });
+      return response
     } catch (error) {
       return(error);
     }

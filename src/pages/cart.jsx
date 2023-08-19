@@ -1,6 +1,10 @@
 import { useContext, useState, useEffect } from "react";
 import "./css/cart.css";
 import GamesContext from "../context/games/gamesContext";
+import Swal from "sweetalert2"
+import { Link } from "react-router-dom";
+
+
 
 const Cart = () => {
   const { getCartUser, deleteItemCartUser } = useContext(GamesContext);
@@ -17,8 +21,26 @@ const Cart = () => {
   };
 
   const deleteItemCart = async (id) => {
-    const response = await deleteItemCartUser(id);
-    return response;
+    Swal.fire({
+  title: 'Quitaras el juego del carrito',
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Quitar',
+  cancelButtonText: 'Cancelar'
+}).then((result) => {
+  if (result.isConfirmed) {
+    deleteItemCartUser(id);
+    
+    Swal.fire({
+      title: 'El juego fue removido con exito!',
+      icon: 'success',
+      showConfirmButton: false, 
+      timer: 2000
+    });
+  }
+})
   };
 
  
@@ -81,9 +103,9 @@ const Cart = () => {
                 {totalPrice} 
               </p>
             </div>
-            <button className="menu_btn registro go-purchase">
+            <Link to="/checkout"><button className="menu_btn registro go-purchase">
               Ir a pagar
-            </button>
+            </button></Link>
           </div>
         </div>
       </section>

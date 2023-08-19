@@ -1,0 +1,79 @@
+.random_games{
+    margin: 2rem 0;
+    padding: 2rem;
+ 
+}
+
+.random_games h2{
+    color: #fff;
+    font-size: 3rem;
+}
+
+.random_games p{
+    color:var(--color-secondary);
+    font-size: 1.5rem;
+}
+
+.random_games_list{
+    overflow: auto;
+    display: flex;
+    padding: 1rem;
+}
+
+.random_games_list_item img{
+  border-radius: 1rem 0;
+  border: 3px solid #ffffffd4;
+  box-shadow: 10px 10px 5px #000;
+}
+
+.random_games_list::-webkit-scrollbar {
+    height: 7px;
+}
+
+
+.random_games_list::-webkit-scrollbar-thumb {
+    background-color: var(--color-secondary); 
+    border-radius: 5px; 
+}
+
+
+.random_games_list_link{
+    text-decoration: none;
+}
+
+.random_games_list_item{
+    margin: 0 1rem;
+
+}
+
+.random_games_list_item p{
+    color:#fff;
+    text-align: center;
+    font-size: 1rem;
+}
+
+@media(min-width : 992px){
+    .random_games{
+        margin: 2rem auto;
+        width: 90%;
+    }
+
+    .random_games h2{
+        font-size: 4rem;
+    }
+    
+    .random_games p{
+        color:var(--color-secondary);
+        font-size: 1.8rem;
+    }
+    .random_games_list_item p{
+        color:#fff;
+        font-size: 1.2rem;
+    }
+    .random_games_list_item img{
+        width: 13rem;
+        height: 17rem;
+        margin-bottom: 1rem;
+    }
+}
+

@@ -14,7 +14,7 @@ function CategoriesHome() {
       <section className="container-fluid mt-5 categories">
         <div className="row">
           <div className="col-12 text-center">
-            <h2 className="categories_tittle mb-4">Categorias Populares</h2>
+            <h2 className="categories_tittle mb-4">CATEGORIAS</h2>
           </div>
           <div className="col-12 col-md-6 col-lg-4 categories_cards_mobile ">
             <div className="text-center categories_card_mobile">

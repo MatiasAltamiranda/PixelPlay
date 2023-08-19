@@ -20,8 +20,8 @@ function Footer(){
                   </ul>
                 </div>
                 <div className="col-12 col-lg-4 text-center footer-text">
-                  <h2 className="footer-tittle">Tu tienda <span>gaming</span></h2>  
-                  <p>Lorem ipsum dolor sit amet consectetur <span>adipisicing elit</span>. A sed atque quasi quis minus, nemo numquam tempore maxime est in repellendus nam dignissimos, <span>veritatis facere perspiciatis</span> aut, tempora eligendi placeat.
+                  <h2 className="footer-tittle">Solo<span> PIXELPLAY</span></h2>  
+                  <p>Explora un mundo de diversión y emoción en <span>PixelPlay</span>. Somos tu tienda de videojuegos en línea, dedicados a brindarte los mejores títulos y experiencias. ¡<span>Únete</span>  a la comunidad de jugadores apasionados en PixelPlay!
                  </p>
                 </div>
             </div>
