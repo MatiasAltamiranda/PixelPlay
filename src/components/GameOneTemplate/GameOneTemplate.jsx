@@ -10,7 +10,7 @@ const GameOneTemplate = (prop) => {
 
   const {addGameCart} = useContext(GamesContext)
 
-
+  const logged = JSON.parse(localStorage.getItem("userData"));
 
 
   
@@ -68,7 +68,8 @@ const GameOneTemplate = (prop) => {
         <div className="purchase_price">
                 <p>${price}</p>
             </div>
-            <button onClick={()=>addCart(id)} className="menu_btn ingresar">Agregar al carrito</button>
+          {logged? ( <button onClick={()=>addCart(id)} className="menu_btn ingresar">Agregar al carrito</button>) : (<></>)}
+           
            
       </div>
       </div>

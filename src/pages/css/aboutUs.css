@@ -1,0 +1,113 @@
+.about{
+    margin-top: 7.3rem;
+    padding: 0;
+}
+
+.about_pixel{
+    padding: 1rem;
+}
+
+.about_img{
+    width: 20rem;
+    margin-bottom: -1.5rem;
+}
+
+.about_paragraph{
+    color: #fff;
+    font-weight: 200;
+    margin-bottom: 2rem;
+}
+
+
+
+.about_pixel_button{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.about_pixel_button button{
+    width: 80%;
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0px 10px 1px #7e0fc2;
+    margin-bottom:3rem ;
+    font-size: 1.2rem;
+}
+
+.about_our_mission{
+    padding: 1rem;
+    width: 100;
+    background-color: #000000bd;
+}
+
+.about_mission{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.about_pixel_button button:active{
+    transform: translateY(10px);
+    box-shadow: 0px 0px 0px #7e0fc2;
+    background-color:#7e0fc2 ;
+}
+
+.about_subtitle{
+    color: var(--color-secondary);
+    font-size: 3rem;
+}
+
+
+@media(min-width : 768px){
+
+    .about_pixel figure{
+        display: flex;
+        justify-content: center;
+    }
+
+    .about_img{
+        width: 35rem;
+    }
+    
+    .about_paragraph{   
+    font-size: 1.5rem;
+    text-align: center;
+    }
+
+    .about_pixel_button button{
+        width: 50%;
+    }
+
+    .about_mission{
+        padding: 5rem;
+        width: 80%;
+    }
+}
+
+
+
+@media(min-width : 1400px){
+
+    .about_mission{
+        padding: 9rem;
+        width: 50%;
+    }
+    
+
+    .about_img{
+        width: 40rem;
+    }
+
+    .about_pixel_button button{
+        width: 30%;
+        font-size: 1.6rem;
+    }
+    
+    .about_subtitle{
+        font-size: 5rem;
+    }
+}

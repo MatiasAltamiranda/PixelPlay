@@ -13,7 +13,7 @@ const Registro = () => {
   
 
  if(logged){
-  window.location.href = "/home"}
+  window.location.href = "/"}
 
 
 const {registerUser} = useContext(AuthContext)

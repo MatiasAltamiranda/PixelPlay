@@ -22,6 +22,8 @@ import TemplateGame from "./pages/templateGame";
 import Cart from "./pages/cart";
 import Checkout from "./pages/checkout";
 import NotFound from "./pages/NotFound";
+import AboutUs from "./pages/aboutUs";
+
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
                       </PrivateRoute>
                     }
                   />
+                  <Route path="/about" element={<AboutUs/>}/>
                   <Route path="/register" element={<Register />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/forgotpassword" element={<ForgotPassword/>}/>
@@ -54,9 +57,9 @@ function App() {
                   </PrivateRoute>
                 }/>
                   <Route path="/cart" element={
-                  <PrivateRoute>   
+                 <PrivateRoute>    
                   <Cart/>
-                  </PrivateRoute>
+                 </PrivateRoute> 
                 }/>
                    <Route path="/checkout" element={
                   <PrivateRoute>   

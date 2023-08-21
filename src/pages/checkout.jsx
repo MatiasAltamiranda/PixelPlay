@@ -7,9 +7,6 @@ import CreditCard from "../components/creditCard/creditCard";
 
 const Checkout = () => {
   const { user } = useContext(AuthContext);
-
-  console.log(user);
-
   const { userCart } = useContext(GamesContext);
 
   const calculateTotalPrice = () => {
