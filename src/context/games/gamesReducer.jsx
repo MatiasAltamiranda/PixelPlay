@@ -35,7 +35,7 @@ const GameReducer = (state, action) => {
         games: Array.isArray(action.payload)
           ? action.payload
           : [action.payload],
-        loading: true,
+        loading: false,
       };
     case GET_GAME:
       return {

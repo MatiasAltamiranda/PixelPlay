@@ -3,7 +3,6 @@ import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets/pixelPortada.png";
 import "./navbar.css";
 import Logout from "../logout/logout";
-import SearchNav from "../searchNav/searchNav";
 
 function NavBar() {
   const [btn, setBtn] = useState(false);
@@ -59,7 +58,6 @@ function NavBar() {
               </ul>
             </div>
           </div>     
-          <SearchNav/>   
           {logged ? (
             <div
               className="buttons_user

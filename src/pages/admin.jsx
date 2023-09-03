@@ -1,5 +1,4 @@
 import "./css/admin.css";
-
 import AdminGames from "../components/admin/games/adminGames";
 
 const Admin = () => {

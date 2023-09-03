@@ -341,36 +341,42 @@ const AdminGames = () => {
             </tr>
           </thead>
           <tbody>
-            {loading ? (
-              games?.map((game) => (
-                <tr key={game._id}>
-                  <td>{game.tittle}</td>
-                  <td>
-                    {game.description.length > 40
-                      ? game.description.substring(0, 40) + " ..."
-                      : game.description}
-                  </td>
-                  <td>{game.category}</td>
-                  <td>{game.franchise}</td>
-                  <td>{game.developer}</td>
-                  <td>$ {game.price}</td>
-                  <td>
-                    <i
-                      className="bi bi-pencil-square table-games-icon "
-                      onClick={() => getGameByEdit(game._id)}
-                    ></i>
-                    <i
-                      className="bi bi-trash3 table-games-icon"
-                      onClick={() => handleClickDeleteGame(game._id)}
-                    ></i>
-                  </td>
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan="6">Cargando...</td>
-              </tr>
-            )}
+          {!loading ? (
+  <tr>
+    <td colSpan="7">Cargando...</td>
+  </tr>
+) : (
+  Array.isArray(games) && games.length > 0 ? (
+    games.map((game) => (
+      <tr key={game._id}>
+        <td>{game.tittle}</td>
+        <td>
+          {game.description.length > 40
+            ? game.description.substring(0, 40) + " ..."
+            : game.description}
+        </td>
+        <td>{game.category}</td>
+        <td>{game.franchise}</td>
+        <td>{game.developer}</td>
+        <td>$ {game.price}</td>
+        <td>
+          <i
+            className="bi bi-pencil-square table-games-icon "
+            onClick={() => getGameByEdit(game._id)}
+          ></i>
+          <i
+            className="bi bi-trash3 table-games-icon"
+            onClick={() => handleClickDeleteGame(game._id)}
+          ></i>
+        </td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td colSpan="6">No se encontraron juegos.</td>
+    </tr>
+  )
+)}
           </tbody>
         </Table>
       </div>
