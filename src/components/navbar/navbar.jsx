@@ -7,7 +7,6 @@ import Logout from "../logout/logout";
 function NavBar() {
   const [btn, setBtn] = useState(false);
   const logged = JSON.parse(localStorage.getItem("userData"));
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {

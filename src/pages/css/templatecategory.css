@@ -1,0 +1,13 @@
+.spiner_game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 45vh;
+}
+
+@media (min-width : 992px ) {
+    .spiner_game{
+        height: 70vh;
+    }
+}

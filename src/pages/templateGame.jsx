@@ -29,9 +29,9 @@ const TemplateGame = ()=>{
     return(
         <>
             {!loading ? (
-               <section className="LoadingGames d-flex flex-column align-items-center text-white" style={{marginTop:"8rem"}}>
+               <section className="spiner_game" style={{marginTop:"8rem"}}>
                <Spinner className="display-5" animation="border" variant="light" />
-               <p className="display-5">Cargando datos</p>
+               <p className="display-5 text-white">Cargando juego...</p>
              </section>
             ) : (
             <section className="container one_game">   

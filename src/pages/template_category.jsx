@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import GamesContext from "../context/games/gamesContext";
 import CardGame from "../components/cardGame/cardGame";
 import Spinner from "react-bootstrap/Spinner";
+import "./css/templatecategory.css"
 
 const Category_template = () => {
   const { category } = useParams();
@@ -22,12 +23,16 @@ const Category_template = () => {
 
   return (
     <>
-      <div className="container games_category ">
+      <div className="container games_category">
         <div className="row">
           {loading ? (
-            <section className="LoadingGames d-flex flex-column align-items-center text-white">
-              <Spinner className="display-5" animation="border" variant="light" />
-              <p className="display-5">Cargando juegos</p>
+            <section className="spiner_game">
+              <Spinner
+                className="display-5"
+                animation="border"
+                variant="light"
+              />
+              <p className="display-5 text-white">Cargando juegos...</p>
             </section>
           ) : Array.isArray(games) && games.length > 0 ? (
             games.map((game) => (

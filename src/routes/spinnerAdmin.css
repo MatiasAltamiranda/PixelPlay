@@ -1,0 +1,13 @@
+.spinerAdmin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+@media (min-width : 992px ) {
+    .spinerAdmin{
+        height: 100vh;
+    }
+}

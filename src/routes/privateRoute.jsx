@@ -23,7 +23,7 @@ const PrivateRoute = (prop)=>{
         }
     },[isAuth, navigate])
 
-    if(loading) return  <section className="LoadingGames d-flex flex-column align-items-center text-white" style={{marginTop:"8rem"}}>
+    if(loading) return  <section className="LoadingGames d-flex flex-column align-items-center text-white h-100 w-100" style={{marginTop:"8rem"}}>
     <Spinner className="display-5" animation="border" variant="light" />
     <p className="display-5">Cargando</p>
   </section>
