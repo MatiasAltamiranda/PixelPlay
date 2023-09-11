@@ -79,10 +79,10 @@ const handleSubmit = (e,id) => {
             </div>
 
             <div>
-              <input  className="input-review" type="text" name="title" onChange={handleOnChange} value={formReview.title} placeholder="Titulo" required minLength="2" maxLength="50" />
+              <input  className="input-review" type="text" name="title" onChange={handleOnChange} value={formReview.title} placeholder="Titulo" required minLength="10" maxLength="50" />
             </div>
             <div>
-              <textarea className="input-review area" name="content" onChange={handleOnChange} value={formReview.content} placeholder="Comentario..." required minLength="10" maxLength="450"></textarea>
+              <textarea className="input-review area" name="content" onChange={handleOnChange} value={formReview.content} placeholder="Comentario..." required minLength="10" maxLength="250"></textarea>
             </div>
             <button className="menu_btn ingresar" type="submit">Comentar</button>
           </form>
